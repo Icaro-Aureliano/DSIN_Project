@@ -1,0 +1,29 @@
+{% extends "default.html" %}
+{% block content %}
+
+<div class="service_list">
+    {% if exist %}
+    <h2 class="txt">Seus agendamentos</h2>
+        {% for service in services %}
+            <form class="service">
+                <input type="hidden" name="service_id" value="{{ service.id }}">
+                <label class="service_date">
+                    {{ service.content }}
+                    
+                </label>
+                <label class="service_content">
+                    {{ service.date }}
+
+                </label>
+                <input type="button" name="update" class="btn_update" value="Remarcar">
+                <input type="button" name="cancel" class="btn_cancel" value="Cancelar">
+            </form>
+
+        {% endfor %}
+    {% else %}
+            <h2 class="txt">Sem agendamentos</h2>
+    {% endif %}
+</div>
+    <a class="btn btn-service"href="{{ url_for('index') }} ">Voltar</a>
+
+{% endblock %}

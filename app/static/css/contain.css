@@ -1,0 +1,9 @@
+.contain_content{
+    margin: 2vh 0;
+    text-align: center;
+    width: 65%;
+    height: 50%;
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%);
+}

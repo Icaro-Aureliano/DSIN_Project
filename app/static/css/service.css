@@ -1,0 +1,46 @@
+.service_list{
+    padding:10vh;
+    height: 100%;
+    overflow:auto;
+    margin-bottom: 2vh;
+}
+.txt{
+    color: white;
+}
+.service{
+    line-height: 5vh;
+    margin: 2vh auto;
+    width: 45%;
+    background: rgb(207, 207, 207);
+    padding: 1vh;
+    border-radius: 10px;
+}
+.service_date,.service_content{
+    font-size: medium;
+    font-weight: 100;
+}
+.btn_update{
+    background: black;
+    color:white;
+    border: none;
+    padding: 1vh;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.btn_cancel{
+    background: black;
+    color:white;
+    border: none;
+    padding: 1vh;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor:pointer;
+}
+.btn_cancel:hover{
+    background: rgb(168, 0, 0);
+}
+.btn_update:hover{
+    color:black;
+    background: white;
+}

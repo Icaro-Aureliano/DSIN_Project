@@ -1,0 +1,13 @@
+.form_index{
+    width: 35%;
+    background: rgb(211, 211, 211);
+    height: auto;
+    line-height: 7vh;
+    margin: 2vh auto;
+    justify-items: center;
+    border-radius: 10px;
+    padding: 5vh;
+}
+.btn-services{
+    margin-top: 10vh;
+}

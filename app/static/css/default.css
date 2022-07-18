@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.flashes{
+    margin: 2vh 0 0;
+    padding:1vh;
+    width: 100;
+    background: rgba(255, 255, 255, 0.638) 50%;
+    text-align: center;
+}
+body{
+    background-image: url("../assets/salon.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh 0 0;
+}
+.logo_name{
+    color:white;
+}
+
+.btn{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+    padding: 1vh;
+    margin: 0 0 0 1.5vh;
+    background-color:rgb(235, 235, 235);
+    border-radius:2.5px;
+    border: 3px solid rgb(235, 235, 235);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1s;
+}
+.btn_login{
+    background: none;
+    border: 2px solid rgb(235, 235, 235);
+    color:rgb(235, 235, 235);
+
+}
+
+
+.menu-buttons{
+    display: flex;
+    justify-content: space-around;
+
+}

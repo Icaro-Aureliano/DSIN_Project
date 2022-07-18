@@ -1,0 +1,24 @@
+{% extends 'default.html' %}
+{% block content %}
+<div class="historic_list">
+    {% for record in records %}
+        <form class="historic" action="">
+            <label class="historic_label" for="name">
+                <p> Cliente:{{ record.user_name.title() }} </p>
+            </label>
+            <label class="historic_label" for="date">
+                <p>Data do agendamento: {{ record.date }} </p>
+            </label>
+            <label class="historic_label" for="content">
+                <p>Procedimento: {{ record.service_content }}</p>
+            </label>
+            {% if current_user.username == "cabeleleila_leila" %}
+                <input type="button" value="Atendido">
+                <input type="button" value="Remarcar">
+                <input type="button" value="Cancelar">
+            {% endif %}
+        </form>
+    {% endfor %}
+</div>
+
+{% endblock %}

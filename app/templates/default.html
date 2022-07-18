@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/default.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/contain.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/form_login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/form_regis.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/service.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/historic.css') }}">
+
+    <title>Cabeleleila Leila - {{ page }}</title>
+</head>
+<body >
+
+    <div class="header">
+        {% if current_user.is_authenticated %}
+            <h2 class="logo_name">{{ page }} - {{current_user.username.title()}}</h2>
+        {% else %}
+            <h2 class="logo_name">{{ page }}</h2>
+        {% endif %}
+        <div class="menu-buttons">
+            {% if current_user.is_authenticated %}
+                {% if page != "Home" %}
+                    <a class="btn_login btn" href="{{ url_for('index') }}">Home</a>
+                {% endif %}
+                {% if page != "Histórico" %}
+                    <a class="btn_login btn" href="{{ url_for('historic') }}">Historico</a>
+                {% endif %}
+                {% if page != "Agendamentos" %}
+                    <a class="btn_login btn" href="{{ url_for('service') }}">Agendamentos</a>
+                {% endif %}
+                <a class="btn_login btn" href="{{ url_for('logout') }}">Sair</a>
+            {% else %}
+                <a class="btn_login btn" href="{{ url_for('login') }}">Entrar</a>
+            {% endif %}
+            
+            {% if page != "Cadastro" and not current_user.is_authenticated %}
+                <a class="btn btn_regis" href="{{url_for('regis')}}">Registre-se</a>
+            {% endif %}
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="contain_content">
+
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>

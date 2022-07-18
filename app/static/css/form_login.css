@@ -1,0 +1,28 @@
+.form_login{
+    width: 35%;
+    background: rgba(255, 255, 255, 0.52);
+    height: auto;
+    line-height: 7vh;
+    margin: 2vh auto;
+    justify-items: center;
+    border-radius: 10px;
+    padding: 5vh;
+}
+label{
+    font-size: 3.5vh;
+    display: block;
+    font-weight: 600;
+}
+.btn_form{
+    margin-top: 1vh;
+    display: inline;
+}
+#password,#username{
+    border:none;
+    text-align: center;
+    background: none;
+    color:black;
+}
+#password:focus,#username:focus{
+    outline:none;
+}

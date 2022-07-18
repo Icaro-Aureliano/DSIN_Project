@@ -1,0 +1,18 @@
+.historic_list{
+    padding:10vh;
+    height: 100%;
+    overflow:auto;
+    margin-bottom: 2vh;
+}
+.historic{
+    line-height: 5vh;
+    margin: 2vh auto;
+    width: 45%;
+    background: black;
+    padding: 1vh;
+    border-radius: 10px;
+}
+.historic_label{
+    font-size: medium;
+    color: white;
+}

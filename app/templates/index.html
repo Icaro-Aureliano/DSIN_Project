@@ -1,0 +1,48 @@
+{% extends 'default.html' %}
+
+{% block content %}
+
+    
+<form class="form_index" action="{{url_for('add_service')}}" method="POST">
+    
+    {{ form.csrf_token }}
+    <div id="text-group">
+        <label for="username">Olá 
+        {% if current_user.is_authenticated %}
+            {{ current_user.username.title() }}
+            <input name = "name_user"type="hidden" value="{{ current_user.username.title() }}">
+        {% else %}
+            <input name = "name_user"type="hidden" value="None">
+            Usuario
+        {% endif %}
+    </label>
+    </div>
+
+    <div id="date-group">
+        <label for="date"> Data de agendamento</label>
+        {{ form.date }}
+        {% if form.errors.username %}
+            <div id="text_alert">
+                <p>Esse campo é requerido</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div id="date-group">
+        <label for="content">Tratamentos capilares</label>
+        {{ form.content }}
+        {% if form.errors.username %}
+            <div id="text_alert">
+                <p>Esse campo é requerido</p>
+            </div>
+        {% endif %}
+    </div>
+
+
+
+    <button class="btn btn_form" type="submit">Agendar atendimento</button>
+</form>
+
+<a class="btn" href="{{url_for('service')}}">Veja seus agendamentos</a>
+
+{% endblock %}

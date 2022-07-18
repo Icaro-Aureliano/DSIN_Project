@@ -1,0 +1,52 @@
+{% extends "default.html"  %}
+
+{% block content %}
+
+    
+        <form class="form_regis" action="{{url_for('add_user')}}" method="POST">
+            {{ form.csrf_token }}
+            <div id="text-group">
+                <label for="username">Nome de ususario</label>
+                {{ form.username( class="txt_box", placeholder = "Seu Usuario") }}
+                {% if form.errors.username %}
+                    <div id="text_alert">
+                        <p>Esse campo é requerido</p>
+                    </div>
+                {% endif %}
+            </div>
+    
+            <div id="text-group">
+                <label for="password">Senha</label>
+                {{ form.password( class="txt_box", placeholder = "Sua Senha") }}
+                {% if form.errors.password %}
+                    <div id="text_alert">
+                        <p>Esse campo é requerido</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div id="text-group">
+                <label for="name">Nome completo</label>
+                {{ form.name( class="txt_box", placeholder = "Seu nome") }}
+                {% if form.errors.name %}
+                    <div id="text_alert">
+                        <p>Esse campo é requerido</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div id="text-group">
+                <label for="email">email</label>
+                {{ form.email( class="txt_box", placeholder = "Seu email") }}
+                {% if form.errors.email %}
+                    <div id="text_alert">
+                        <p>Esse campo é requerido</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <button class="btn btn_form" type="submit">Cadastrar</button>
+        </form>
+        <a class="btn btn_form" href="{{url_for('index')}} ">Voltar</a>
+
+{% endblock %}
