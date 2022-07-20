@@ -1,4 +1,4 @@
-Projeto realizado com intuito de realizar a prova prática da empresa DSIN, revendo todo meu aprendizado em aplicação web e banco de dados.
+Projeto feito com intuito de realizar a prova prática da empresa DSIN, revendo todo meu aprendizado em aplicação web e banco de dados.
 
 O projeto foi desenvolvido em html e css com um banco de dados em sql, tendo um CRUD feito em Python.
 
